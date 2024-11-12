@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useLoaderData, useParams } from 'react-router-dom'
 import nutritionImg from '../assets/nutrition.png'
-import { addFavorite } from '../utils'
+import { addFavorite, getAllFavorites } from '../utils'
+
 
 const CoffeeDetails = () => {
   const data = useLoaderData()
@@ -11,7 +12,7 @@ const CoffeeDetails = () => {
   useEffect(() => {
     const singleData = data.find(coffee => coffee.id == id)
     setCoffee(singleData)
-    const favorites = getAllFavorites()
+    const favorites = getAllFavorites();
     const isExist = favorites.find(item => item.id == singleData.id)
     if (isExist) {
       setIsFavorite(true)

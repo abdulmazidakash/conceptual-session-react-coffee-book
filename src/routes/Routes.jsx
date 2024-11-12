@@ -8,6 +8,7 @@ import CoffeeCards from "../components/CoffeeCards";
 import CoffeeDetails from "../pages/CoffeeDetails";
 
 const routes = createBrowserRouter([
+	
 	{
 		path: '/',
 		element: <MainLayout></MainLayout>,
@@ -43,8 +44,11 @@ const routes = createBrowserRouter([
 				element: <CoffeeDetails></CoffeeDetails>,
 				loader: () => fetch('../coffees.json'),
 			},
+			
 		]
 	}
-])
+],
+
+)
 
 export default routes;
